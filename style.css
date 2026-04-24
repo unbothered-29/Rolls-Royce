@@ -145,19 +145,20 @@
  }
 
  .hero-title {
-     font-family: 'Cormorant Garamond', serif;
-     font-size: clamp(72px, 10vw, 130px);
-     font-weight: 300;
-     letter-spacing: 0.08em;
+     font-family: "Riviera Nights", Helvetica, Arial, -apple-system, sans-serif;
+     font-size: 72px;
+     /* font-size: clamp(70px, 10vw, 120px); */
+     font-weight: 100;
+     letter-spacing: 0.45em;
      text-transform: uppercase;
      color: #fff;
-     line-height: 1;
+     line-height: 80px;
      margin-bottom: 16px;
  }
 
  .hero-collection {
      font-family: "Riviera Nights", Helvetica, Arial, -apple-system, sans-serif;
-     font-size: 25px;
+     font-size: 20px;
      font-weight: 600;
      letter-spacing: 0.5em;
      line-height: 37px;
