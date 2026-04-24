@@ -4,18 +4,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Rolls-Royce</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF1bcZAHkB4Rrjf2o-PGO7mtz08t9hihbSAQ&s"
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        /* ── VIDEO BACKGROUND ── */
+        .video-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .video-bg iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        /* Dark overlay — heavier on the right like the screenshot */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(to right,
+                    rgba(0, 0, 0, 0.18) 0%,
+                    rgba(0, 0, 0, 0.10) 40%,
+                    rgba(0, 0, 0, 0.55) 100%);
+            pointer-events: none;
+        }
+
+        /* ── PAGE SHELL ── */
+        .page {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+        }
+
+        /* ── NAV ── */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 44px;
+            flex-shrink: 0;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            letter-spacing: 0.18em;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1px;
+            background: #fff;
+        }
+
+        /* RR Monogram SVG */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            letter-spacing: 0.18em;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .nav-right svg {
+            width: 16px;
+            height: 16px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        /* Thin divider */
+        .divider {
+            width: calc(100% - 88px);
+            margin: 0 44px;
+            height: 0.5px;
+            background: rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        /* ── HERO TEXT ── */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0;
+            padding-bottom: 40px;
+        }
+
+        .hero-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(72px, 10vw, 130px);
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .hero-collection {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 44px;
+        }
+
+        /* Discover More button */
+        .btn-discover {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #111;
+            background: #fff;
+            border: none;
+            border-radius: 999px;
+            padding: 18px 48px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-discover:hover {
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ── SLIDE DOTS (left side) ── */
+        .slide-dots {
+            position: fixed;
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: #fff;
+        }
+
+        /* Circle play indicator */
+        .slide-play {
+            width: 22px;
+            height: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        .slide-play::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 7px solid rgba(255, 255, 255, 0.8);
+            margin-left: 2px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="nav">
-        <video autoplay loop muted
-            src="https://players.brightcove.net/1634657725001/3Ev5jVtXB_default/index.html?videoId=6391132493112"></video>
-        <div class="menu">
-            <i class="ri-menu-line"></i>
-            <h4>Menu</h4>
+
+    <!-- Fullscreen Brightcove video (iframe) -->
+    <div class="video-bg">
+        <iframe src="https://players.brightcove.net/1634657725001/3Ev5jVtXB_default/index.html?videoId=6391132493112"
+            allowfullscreen allow="autoplay; fullscreen">
+        </iframe>
+    </div>
+
+    <!-- Dark overlay -->
+    <div class="overlay"></div>
+
+    <!-- Slide dots -->
+    <div class="slide-dots">
+        <div class="slide-play"></div>
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <!-- Page layout -->
+    <div class="page">
+
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-left">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                Menu
+            </div>
+
+            <!-- RR Monogram -->
+            <div class="logo">
+                <svg width="52" height="60" viewBox="0 0 52 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer rectangle frame -->
+                    <rect x="1" y="1" width="50" height="58" stroke="white" stroke-width="0.8" />
+                    <!-- R letterforms (simplified RR monogram) -->
+                    <text x="26" y="42" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="34"
+                        font-weight="400" fill="white" letter-spacing="-2">RR</text>
+                </svg>
+            </div>
+
+            <div class="nav-right">
+                <!-- Search icon -->
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="7" />
+                    <line x1="16.5" y1="16.5" x2="22" y2="22" />
+                </svg>
+                Find a Dealer
+            </div>
+        </nav>
+
+        <!-- Divider line -->
+        <div class="divider"></div>
+
+        <!-- Hero content -->
+        <div class="hero">
+            <p class="hero-sub">Project</p>
+            <h1 class="hero-title">Nightingale</h1>
+            <p class="hero-collection">A Coachbuild Collection</p>
+            <button class="btn-discover">Discover More</button>
         </div>
+
     </div>
 </body>
 
