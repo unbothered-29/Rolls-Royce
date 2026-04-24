@@ -1,0 +1,234 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ html,
+ body {
+     height: 100%;
+     width: 100%;
+     overflow: hidden;
+     background: #000;
+ }
+
+ /* ── VIDEO BACKGROUND ── */
+ .video-bg {
+     position: fixed;
+     inset: 0;
+     z-index: 0;
+     pointer-events: none;
+     object-fit: cover;
+ }
+
+ .video-bg iframe {
+     width: 100%;
+     height: 100%;
+     border: none;
+     pointer-events: none;
+ }
+
+ /* Dark overlay — heavier on the right like the screenshot */
+ .overlay {
+     position: fixed;
+     inset: 0;
+     z-index: 1;
+     background: linear-gradient(to right,
+             rgba(0, 0, 0, 0.18) 0%,
+             rgba(0, 0, 0, 0.10) 40%,
+             rgba(0, 0, 0, 0.55) 100%);
+     pointer-events: none;
+ }
+
+ /* ── PAGE SHELL ── */
+ .page {
+     position: relative;
+     z-index: 2;
+     height: 100vh;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     color: #fff;
+ }
+
+ /* ── NAV ── */
+ nav {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 28px 44px;
+     flex-shrink: 0;
+ }
+
+ .nav-left {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     cursor: pointer;
+     letter-spacing: 0.18em;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 12px;
+     font-weight: 400;
+     text-transform: uppercase;
+ }
+
+ .hamburger {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+ }
+
+ .hamburger span {
+     display: block;
+     width: 22px;
+     height: 1px;
+     background: #fff;
+ }
+
+ /* RR Monogram SVG */
+ .logo {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .nav-right {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     cursor: pointer;
+     letter-spacing: 0.18em;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 12px;
+     font-weight: 400;
+     text-transform: uppercase;
+ }
+
+ .nav-right svg {
+     width: 16px;
+     height: 16px;
+     stroke: #fff;
+     fill: none;
+     stroke-width: 1.5;
+ }
+
+ /* Thin divider */
+ .divider {
+     width: calc(100% - 88px);
+     margin: 0 44px;
+     height: 0.5px;
+     background: rgba(255, 255, 255, 0.4);
+     flex-shrink: 0;
+ }
+
+ /* ── HERO TEXT ── */
+ .hero {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     gap: 0;
+     padding-bottom: 40px;
+ }
+
+ .hero-sub {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 13px;
+     font-weight: 400;
+     letter-spacing: 0.45em;
+     text-transform: uppercase;
+     color: rgba(255, 255, 255, 0.9);
+     margin-bottom: 10px;
+ }
+
+ .hero-title {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: clamp(72px, 10vw, 130px);
+     font-weight: 300;
+     letter-spacing: 0.08em;
+     text-transform: uppercase;
+     color: #fff;
+     line-height: 1;
+     margin-bottom: 16px;
+ }
+
+ .hero-collection {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 13px;
+     font-weight: 400;
+     letter-spacing: 0.45em;
+     text-transform: uppercase;
+     color: rgba(255, 255, 255, 0.9);
+     margin-bottom: 44px;
+ }
+
+ /* Discover More button */
+ .btn-discover {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 11px;
+     font-weight: 500;
+     letter-spacing: 0.3em;
+     text-transform: uppercase;
+     color: #111;
+     background: #fff;
+     border: none;
+     border-radius: 999px;
+     padding: 18px 48px;
+     cursor: pointer;
+     transition: background 0.3s, color 0.3s;
+ }
+
+ .btn-discover:hover {
+     background: rgba(255, 255, 255, 0.85);
+ }
+
+ /* ── SLIDE DOTS (left side) ── */
+ .slide-dots {
+     position: fixed;
+     left: 28px;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 3;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .dot {
+     width: 6px;
+     height: 6px;
+     border-radius: 50%;
+     background: rgba(255, 255, 255, 0.35);
+     cursor: pointer;
+     transition: background 0.3s;
+ }
+
+ .dot.active {
+     background: #fff;
+ }
+
+ /* Circle play indicator */
+ .slide-play {
+     width: 22px;
+     height: 22px;
+     border: 1px solid rgba(255, 255, 255, 0.6);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 4px;
+     cursor: pointer;
+ }
+
+ .slide-play::after {
+     content: '';
+     width: 0;
+     height: 0;
+     border-top: 4px solid transparent;
+     border-bottom: 4px solid transparent;
+     border-left: 7px solid rgba(255, 255, 255, 0.8);
+     margin-left: 2px;
+ }
