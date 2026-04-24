@@ -211,26 +211,3 @@
  .dot.active {
      background: #fff;
  }
-
- /* Circle play indicator */
- .slide-play {
-     width: 22px;
-     height: 22px;
-     border: 1px solid rgba(255, 255, 255, 0.6);
-     border-radius: 50%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin-bottom: 4px;
-     cursor: pointer;
- }
-
- .slide-play::after {
-     content: '';
-     width: 0;
-     height: 0;
-     border-top: 4px solid transparent;
-     border-bottom: 4px solid transparent;
-     border-left: 7px solid rgba(255, 255, 255, 0.8);
-     margin-left: 2px;
- }
