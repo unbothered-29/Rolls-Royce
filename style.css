@@ -131,14 +131,14 @@
      justify-content: center;
      text-align: center;
      gap: 0;
-     padding-bottom: 100px;
+     padding-bottom: 130px;
  }
 
  .hero-sub {
      font-family: "Riviera Nights", Helvetica, Arial, -apple-system, sans-serif;
      font-size: 27px;
      font-weight: 500;
-     letter-spacing: 0.5em;
+     letter-spacing: 0.3em;
      text-transform: uppercase;
      color: rgba(255, 255, 255, 0.9);
      margin-bottom: 10px;
@@ -149,7 +149,7 @@
      font-family: "Riviera Nights", Helvetica, Arial, -apple-system, sans-serif;
      font-size: 72px;
      font-weight: 100;
-     letter-spacing: 0.45em;
+     letter-spacing: 0.3em;
      text-transform: uppercase;
      color: #fff;
      line-height: 80px;
