@@ -153,14 +153,14 @@
      text-transform: uppercase;
      color: #fff;
      line-height: 80px;
-     margin-bottom: 16px;
+     margin-bottom: 18px;
  }
 
  .hero-collection {
      font-family: "Riviera Nights", Helvetica, Arial, -apple-system, sans-serif;
-     font-size: 20px;
+     font-size: 30px;
      font-weight: 500;
-     letter-spacing: 0.5em;
+     letter-spacing: 0.25em;
      line-height: 37px;
      text-transform: uppercase;
      color: rgba(255, 255, 255, 0.9);
