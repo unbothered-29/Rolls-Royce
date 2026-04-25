@@ -212,3 +212,8 @@
  .dot.active {
      background: #fff;
  }
+
+ .dot:hover {
+     cursor: pointer;
+     background: #fff;
+ }
