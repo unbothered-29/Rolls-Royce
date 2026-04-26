@@ -12,27 +12,37 @@
      background: #000;
  }
 
+ .pg1 {
+     position: relative;
+     height: 100vh;
+     width: 100vw;
+     overflow: hidden;
+ }
+
  /* ── VIDEO BACKGROUND ── */
  .video-bg {
-     position: fixed;
+     position: absolute;
      inset: 0;
      z-index: 0;
      pointer-events: none;
-     object-fit: cover;
-     aspect-ratio: 9/16;
      overflow: hidden;
  }
 
  .video-bg iframe {
+     position: absolute;
+     top: 50%;
+     left: 50%;
      width: 100%;
      height: 100%;
+     transform: translate(-50%, -50%) scale(1.5);
+     transform-origin: center center;
      border: none;
      pointer-events: none;
  }
 
  /* Dark overlay — heavier on the right like the screenshot */
- .page .overlay {
-     position: fixed;
+ .overlay {
+     position: absolute;
      inset: 0;
      z-index: 1;
      background: linear-gradient(to right,
@@ -254,11 +264,10 @@
      position: absolute;
      top: 50%;
      left: 50%;
-     width: 100vw;
-     height: 56.25vw;
-     min-height: 100vh;
-     min-width: 177.78vh;
-     transform: translate(-50%, -50%);
+     width: 100%;
+     height: 100%;
+     transform: translate(-50%, -50%) scale(1.5);
+     transform-origin: center center;
      border: none;
      pointer-events: none;
  }
