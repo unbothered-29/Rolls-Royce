@@ -30,7 +30,7 @@
  }
 
  /* Dark overlay — heavier on the right like the screenshot */
- .overlay {
+ .page .overlay {
      position: fixed;
      inset: 0;
      z-index: 1;
@@ -88,13 +88,13 @@
  }
 
  /* RR Monogram SVG */
- .logo {
+ .page .logo {
      display: flex;
      align-items: center;
      justify-content: center;
  }
 
- .logo img {
+ .page .logo img {
      height: 100px;
      width: 80px;
      margin-left: 20px;
