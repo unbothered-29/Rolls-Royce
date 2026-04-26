@@ -125,7 +125,7 @@
  /* Thin divider */
  .divider {
      width: calc(100% - 88px);
-     margin: 0 40px;
+     margin: 0 55px;
      height: 0.5px;
      background: rgba(255, 255, 255, 0.4);
      flex-shrink: 0;
