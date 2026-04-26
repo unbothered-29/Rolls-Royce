@@ -179,12 +179,13 @@
 
  /* Discover More button */
  .btn-discover {
+     width: 270px;
      font-family: 'Montserrat', sans-serif;
      font-size: 11px;
-     font-weight: 500;
+     font-weight: 600;
      letter-spacing: 0.3em;
      text-transform: uppercase;
-     color: #111;
+     color: black;
      background: #fff;
      border: none;
      border-radius: 999px;
@@ -320,7 +321,7 @@
      align-items: center;
      justify-content: center;
      text-align: center;
-     padding-bottom: 80px;
+     padding-bottom: 60px;
  }
 
  .hero2-title {
