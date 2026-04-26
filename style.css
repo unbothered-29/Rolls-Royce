@@ -354,9 +354,10 @@
      cursor: pointer;
      letter-spacing: 0.18em;
      font-family: "Riviera Nights", Helvetica, Arial, -apple-system, sans-serif;
-     font-size: 14px;
+     font-size: 12px;
      font-weight: 400;
      text-transform: uppercase;
+     margin-left: -20px;
  }
 
  .nav-right2 {
@@ -366,9 +367,11 @@
      cursor: pointer;
      letter-spacing: 0.18em;
      font-family: "Riviera Nights", Helvetica, Arial, -apple-system, sans-serif;
-     font-size: 14px;
+     font-size: 12px;
      font-weight: 400;
      text-transform: uppercase;
+     margin-right: -20px;
+
  }
 
  .nav-right2 svg {
