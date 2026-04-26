@@ -343,8 +343,8 @@
  .logo2 img {
      height: 40px;
      width: 40px;
-     margin-left: 20px;
-     margin-top: -10px;
+     margin-left: 80px;
+     margin-top: 0px;
  }
 
  .nav-left2 {
@@ -357,7 +357,6 @@
      font-size: 14px;
      font-weight: 400;
      text-transform: uppercase;
-     margin-top: -10px;
  }
 
  .nav-right2 {
@@ -370,7 +369,6 @@
      font-size: 14px;
      font-weight: 400;
      text-transform: uppercase;
-     margin-top: -10px;
  }
 
  .nav-right2 svg {
@@ -382,6 +380,7 @@
  }
 
  .page2 nav {
+     height: 40px;
      background: rgba(0, 0, 0, 0.35);
      backdrop-filter: blur(10px);
      -webkit-backdrop-filter: blur(12px);
