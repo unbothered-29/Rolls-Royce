@@ -96,6 +96,7 @@
  .logo img {
      height: 100px;
      width: 80px;
+     margin-left: 20px;
  }
 
  .nav-right {
@@ -121,10 +122,11 @@
  /* Thin divider */
  .divider {
      width: calc(100% - 88px);
-     margin: 0 50px;
+     margin: 0 60px;
      height: 0.5px;
      background: rgba(255, 255, 255, 0.4);
      flex-shrink: 0;
+     margin-top: -35px;
  }
 
  /* ── HERO TEXT ── */
@@ -136,7 +138,7 @@
      justify-content: center;
      text-align: center;
      gap: 0;
-     padding-bottom: 130px;
+     padding-bottom: 80px;
  }
 
  .hero-sub {
