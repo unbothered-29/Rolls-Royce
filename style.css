@@ -403,8 +403,100 @@
      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
  }
 
- .pg2 img {
-     object-fit: cover;
+ /* ── PAGE 3 ── */
+ .pg3 {
+     position: relative;
+     height: 100vh;
+     width: 100vw;
+     overflow: hidden;
+ }
+
+ /* Fullscreen background image */
+ .pg3 .bg-img {
+     position: absolute;
+     inset: 0;
      width: 100%;
      height: 100%;
+     object-fit: cover;
+     z-index: 0;
+ }
+
+ .overlay3 {
+     position: absolute;
+     inset: 0;
+     z-index: 1;
+     background: linear-gradient(to right,
+             rgba(0, 0, 0, 0.25) 0%,
+             rgba(0, 0, 0, 0.10) 50%,
+             rgba(0, 0, 0, 0.40) 100%);
+     pointer-events: none;
+ }
+
+ .page3 {
+     position: relative;
+     z-index: 2;
+     height: 100vh;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     color: #fff;
+ }
+
+ .page3 nav {
+     height: 40px;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.35);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(12px);
+     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+ }
+
+ .slide-dots3 {
+     position: absolute;
+     left: 28px;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 3;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 12px;
+ }
+
+ .dot3 {
+     width: 6px;
+     height: 6px;
+     border-radius: 50%;
+     background: rgba(255, 255, 255, 0.35);
+     cursor: pointer;
+     transition: background 0.3s;
+ }
+
+ .dot3.active3 {
+     background: #fff;
+ }
+
+ .dot3:hover {
+     background: #fff;
+ }
+
+ .hero3 {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding-bottom: 60px;
+ }
+
+ .hero3-title {
+     font-family: "Riviera Nights", Helvetica, Arial, sans-serif;
+     font-size: 60px;
+     font-weight: 100;
+     letter-spacing: 0.1em;
+     text-transform: uppercase;
+     color: #fff;
+     line-height: 1.1;
+     margin-bottom: 44px;
  }
