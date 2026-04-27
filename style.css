@@ -557,21 +557,21 @@
 
  .explore-title {
      font-family: "Riviera Nights", Helvetica, Arial, sans-serif;
-     font-size: 14px;
+     font-size: 20px;
      font-weight: 400;
-     letter-spacing: 0.35em;
+     letter-spacing: 0.15em;
      text-transform: uppercase;
      color: #fff;
-     margin-bottom: 10px;
+     margin-bottom: 13px;
  }
 
  .explore-sub {
      font-family: "Riviera Nights", Helvetica, Arial, sans-serif;
-     font-size: 12px;
+     font-size: 13px;
      font-weight: 300;
-     letter-spacing: 0.3em;
+     letter-spacing: 0.15em;
      text-transform: uppercase;
-     color: rgba(255, 255, 255, 0.5);
+     color: rgba(255, 255, 255, 0.842);
  }
 
  /* Cards */
