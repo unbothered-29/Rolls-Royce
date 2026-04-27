@@ -719,6 +719,11 @@
      color: rgba(255, 255, 255, 0.7);
  }
 
+ .l img {
+     height: 10px;
+     width: 18px;
+ }
+
  /* Social icons */
  .footer-social {
      display: flex;
