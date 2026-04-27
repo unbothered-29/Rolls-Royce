@@ -211,7 +211,7 @@
 
  /* ── SLIDE DOTS (left side) ── */
  .slide-dots {
-     position: fixed;
+     position: absolute;
      left: 28px;
      top: 50%;
      transform: translateY(-50%);
@@ -643,7 +643,7 @@
  .rr-footer {
      background: #111;
      color: #fff;
-     padding: 0 40px 40px;
+     padding: 40px 40px 40px;
  }
 
  .footer-brand {
