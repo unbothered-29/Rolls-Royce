@@ -164,6 +164,9 @@
      color: rgba(255, 255, 255, 0.9);
      margin-bottom: 17px;
      line-height: 24px;
+     opacity: 0;
+     animation: fadeUp 0.9s ease forwards;
+     animation-delay: 0.3s;
  }
 
  .hero-title {
@@ -175,6 +178,9 @@
      color: #fff;
      line-height: 80px;
      margin-bottom: 23px;
+     opacity: 0;
+     animation: fadeUp 0.9s ease forwards;
+     animation-delay: 0.8s;
  }
 
  .hero-collection {
@@ -186,6 +192,9 @@
      text-transform: uppercase;
      color: rgba(255, 255, 255, 0.9);
      margin-bottom: 44px;
+     opacity: 0;
+     animation: fadeUp 0.9s ease forwards;
+     animation-delay: 1.3s;
  }
 
  /* Discover More button */
@@ -203,10 +212,26 @@
      padding: 18px 48px;
      cursor: pointer;
      transition: background 0.3s, color 0.3s;
+     opacity: 0;
+     animation: fadeUp 0.9s ease forwards;
+     animation-delay: 1.8s;
  }
 
  .btn-discover:hover {
      background: rgba(255, 255, 255, 0.767);
+ }
+
+ /* ── TEXT ANIMATION ── */
+ @keyframes fadeUp {
+     from {
+         opacity: 0;
+         transform: translateY(40px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
  }
 
  /* ── SLIDE DOTS (left side) ── */
@@ -344,6 +369,9 @@
      color: #fff;
      line-height: 1.1;
      margin-bottom: 44px;
+     opacity: 0;
+     animation: fadeUp 0.9s ease forwards;
+     animation-delay: 0.4s;
  }
 
  .logo2 {
@@ -505,6 +533,9 @@
      color: #fff;
      line-height: 1.1;
      margin-bottom: 44px;
+     opacity: 0;
+     animation: fadeUp 0.9s ease forwards;
+     animation-delay: 0.4s;
  }
 
  .pg4 {
